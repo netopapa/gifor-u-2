@@ -5,6 +5,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { RoutingModule } from './app.router';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './views/home/home.component';
+import { RouterModule } from '@angular/router';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -38,7 +42,6 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   exports: [
@@ -74,7 +77,7 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatTooltipModule,
   ],
-  declarations: []
+  declarations: [HomeComponent]
 })
 export class MaterialModule { }
 
@@ -87,7 +90,8 @@ export class MaterialModule { }
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
