@@ -77,13 +77,14 @@ import {
     MatToolbarModule,
     MatTooltipModule,
   ],
-  declarations: [HomeComponent]
+  declarations: []
 })
 export class MaterialModule { }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
