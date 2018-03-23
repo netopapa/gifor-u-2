@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import 'materialize-css';
+import { MaterializeModule } from 'ng2-materialize';
+
 import { RoutingModule } from './app.router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
@@ -89,6 +92,7 @@ export class MaterialModule { }
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterializeModule,
     MaterialModule,
     FormsModule,
     HttpModule,
