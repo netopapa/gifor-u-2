@@ -16,6 +16,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    $('#input-search').chips();
   }
 }

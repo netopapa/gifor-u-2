@@ -45,6 +45,8 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { HeaderComponent } from './components/header/header.component';
+import { GifService } from './services/gif/gif.service';
 
 @NgModule({
   exports: [
@@ -87,7 +89,8 @@ export class MaterialModule { }
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +101,9 @@ export class MaterialModule { }
     HttpModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [
+    GifService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
