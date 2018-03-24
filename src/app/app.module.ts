@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
 import 'materialize-css';
-import { MaterializeModule } from 'ng2-materialize';
+import { MzButtonModule, MzInputModule, MzSidenavModule } from 'ng2-materialize';
 
 import { RoutingModule } from './app.router';
 import { FormsModule } from '@angular/forms';
@@ -93,9 +93,10 @@ export class MaterialModule { }
     HomeComponent,
   ],
   imports: [
+    MzButtonModule,
+    MzInputModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MaterializeModule,
     MaterialModule,
     FormsModule,
     HttpModule,
