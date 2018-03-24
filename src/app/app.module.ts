@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import 'materialize-css';
-import { MzButtonModule, MzInputModule, MzSidenavModule } from 'ng2-materialize';
+import { MzButtonModule, MzInputModule, MzSidenavModule, MzCollectionModule, MzIconMdiModule } from 'ng2-materialize';
 
 import { RoutingModule } from './app.router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { GifService } from './services/gif/gif.service';
 import { RouterModule } from '@angular/router';
 import {
   MatAutocompleteModule,
@@ -45,8 +47,6 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
-import { HeaderComponent } from './components/header/header.component';
-import { GifService } from './services/gif/gif.service';
 
 @NgModule({
   exports: [
@@ -89,12 +89,14 @@ export class MaterialModule { }
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    SidebarComponent,
     HomeComponent,
   ],
   imports: [
     MzButtonModule,
     MzInputModule,
+    MzCollectionModule,
+    MzIconMdiModule,
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
