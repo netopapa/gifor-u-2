@@ -1,0 +1,53 @@
+.gif-item {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+
+.gif-item .gif-image {
+  width: 100%;
+}
+
+.gif-item .pelicula {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s linear;
+  opacity: 0;
+}
+
+.gif-item .pelicula .material-icons {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  transform: translateY(-10px);
+}
+
+.gif-item .pelicula .gif-title {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  transition: 0.3s linear;
+  transform: translateY(10px);
+}
+
+.gif-item .pelicula.hovered {
+  opacity: 1;
+}
+
+.gif-item .pelicula.hovered .material-icons {
+  transform: translateY(0);
+}
+
+.gif-item .pelicula.hovered .gif-title {
+  transform: translateY(0);
+}

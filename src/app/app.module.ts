@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import 'materialize-css';
+import { GifItemComponent } from './components/gif-item/gif-item.component';
 import { MzButtonModule, MzInputModule, MzSidenavModule, MzCollectionModule, MzIconMdiModule } from 'ng2-materialize';
 
 import { RoutingModule } from './app.router';
@@ -91,6 +92,7 @@ export class MaterialModule { }
     AppComponent,
     SidebarComponent,
     HomeComponent,
+    GifItemComponent
   ],
   imports: [
     MzButtonModule,
