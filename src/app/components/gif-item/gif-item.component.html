@@ -1,7 +1,9 @@
-<div class="gif-item">
-  <img src="http://media2.giphy.com/media/FiGiRei2ICzzG/200w.gif" alt="" class="gif-image">
+<div class="gif-item" (mouseenter)="showGifInfo($event)" (mouseleave)="hideGifInfo($event)">
+  <img src="{{gif.images.fixed_width.url}}" alt="" class="gif-image">
   <div class="pelicula">
-    <i class="material-icons">remove_red_eye</i>
-    <h5 class="gif-title">Funny Cat GIF</h5>
+    <a href="{{gif.url}}" target="_blanc" class="external-link">
+      <i class="material-icons">remove_red_eye</i>
+    </a>
+    <h5 class="gif-title">{{gif.title}}</h5>
   </div>
 </div>
