@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -8,7 +9,9 @@ declare var $: any;
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -78,5 +81,9 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
 
     setInterval(updateGradient, 10);
+  }
+
+  private searchTheseGifs(q: string): void {
+    this.router.navigate([`/home/${q}`]);
   }
 }

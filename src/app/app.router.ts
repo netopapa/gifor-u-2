@@ -11,6 +11,10 @@ const AppRouter: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'home/:q',
+        component: HomeComponent
     }
 ];
 
