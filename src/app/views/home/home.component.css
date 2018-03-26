@@ -1,9 +1,39 @@
 #gif-list {
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
   padding: 20px;
 }
 
 #gif-list > * {
   margin-top: 0;
+}
+
+#gif-list .header > h4 {
+  color: #fff;
+}
+
+#gif-list .header .search-list .search-item {
+  padding: 5px;
+  background-color: #cecece;
+  color: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  border-radius: 18px;
+}
+
+#gif-list .header .search-list .search-item .material-icons {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: .1s linear;
+}
+
+#gif-list .header .search-list .search-item .material-icons:hover {
+  transform: scale(1.06);
 }
