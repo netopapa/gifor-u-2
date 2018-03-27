@@ -9,6 +9,9 @@ declare var $: any;
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
+
+  private search = '';
+
   constructor(
     private router: Router,
   ) { }
@@ -81,9 +84,22 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
 
     setInterval(updateGradient, 10);
+
+    $('#form-search').submit(() => {
+      if (this.search !== '') {
+        this.search = this.search.replace(' ', '+');
+        this.router.navigate([`${this.search}/concat`]);
+        this.cleanSearch();
+      }
+      return false;
+    });
+  }
+
+  private cleanSearch(): void {
+    this.search = '';
   }
 
   private searchTheseGifs(q: string): void {
-    this.router.navigate([`/home/${q}`]);
+    this.router.navigate([`${q}`]);
   }
 }

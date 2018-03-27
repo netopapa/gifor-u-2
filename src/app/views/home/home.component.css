@@ -8,17 +8,22 @@
 }
 
 #gif-list .header .search-list .search-item {
-  padding: 5px;
   background-color: #cecece;
   color: #000;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100px;
+  display: inline-block;
   border-radius: 18px;
+  margin: 5px;
+}
+
+#gif-list .header .search-list .search-item .query-content {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #gif-list .header .search-list .search-item .material-icons {
+  margin-left: 10px;
   background-color: #000;
   color: #fff;
   border-radius: 50%;

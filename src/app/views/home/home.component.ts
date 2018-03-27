@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private gifList1: Gif[];
   private gifList2: Gif[];
   private gifList3: Gif[];
+  private queryList: string[];
 
   constructor(
     private gifService: GifService,
@@ -28,11 +29,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.route.params.subscribe(
       (params: any) => {
-        this.cleanLists();
-        if (params['q'] != null) {
+        if (params['concat'] != null) {
+          console.log(params['q']);
+          this.concatTheQuery(params['q']);
+        } else if (params['q'] != null) {
+          this.cleanLists();
           this.searchForGifs(params['q'], 12, 0);
         } else {
-          this.searchForGifs('caramelo', 12, 0);
+          this.searchForGifs('code', 12, 0);
         }
       }
     );
@@ -72,5 +76,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.gifList1 = [];
     this.gifList2 = [];
     this.gifList3 = [];
+    this.queryList = [];
+  }
+
+  private cleanGifLists(): void {
+    this.gifList1 = [];
+    this.gifList2 = [];
+    this.gifList3 = [];
+  }
+
+  private concatTheQuery(newQuery: string): void {
+    this.cleanGifLists();
+    this.queryList.push(newQuery);
+    let query = '';
+    this.queryList.forEach(q => {
+      query += `+${q}`;
+    });
+    this.searchForGifs(query, 12, 0);
+  }
+
+  private removeThisQuery(index: number): void {
+    this.queryList.splice(index, 1);
+    this.cleanGifLists();
+    if (this.queryList.length > 0) {
+      let query = '';
+      this.queryList.forEach(q => {
+        query += `+${q}`;
+      });
+      this.searchForGifs(query, 12, 0);
+    } else {
+      this.searchForGifs('code', 12, 0);
+    }
   }
 }

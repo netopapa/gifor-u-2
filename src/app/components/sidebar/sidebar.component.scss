@@ -154,16 +154,6 @@ h2.title {
 
     .sb-header{
       position: relative;
-      .back-circle{
-        position: absolute;
-        top: 0;
-        left: 5%;
-        width: 90%;
-        border-radius: 50%;
-        background-color: #3a3a3a;
-        padding: 30px;
-        transform: translateY(-15px) rotateZ(10deg);
-      }
       h2.title {
           margin: 50px 0 0 0;
           padding: 0;
@@ -171,8 +161,27 @@ h2.title {
       }
     }
 
+    .nav-wrapper {
+      margin-top: 50px;
+
+      input {
+        background-color: transparent;
+        font-size: 1.2rem;
+        padding: 2px 40px;
+        width: calc(100% - 80px);
+        color: #ffffff;
+      }
+
+      label {
+        i {
+          transform: translateY(-10px);
+          color: #fff;
+        }
+      }
+    }
+
     .collection{  
-        margin-top: 40px;        
+        margin-top: 15px;        
         border: 0;
         a {
             background-color: transparent !important;
