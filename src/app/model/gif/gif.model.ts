@@ -9,5 +9,6 @@ export class Gif {
     images: Image;
 
     constructor() {
+        this.images = new Image();
     }
 }

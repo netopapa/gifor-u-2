@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Gif } from '../../model/gif/gif.model';
 
 declare var $: any;
@@ -10,12 +10,11 @@ declare var $: any;
 })
 export class GifItemComponent implements OnInit {
 
-  private gif: Gif;
+  @Input() gif: Gif = new Input();
 
   constructor() { }
 
   ngOnInit() {
-    this.gif = new Gif();
   }
 
   private showGifInfo(e: any): void {

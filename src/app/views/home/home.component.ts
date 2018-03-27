@@ -14,7 +14,9 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  private gifList: Gif[];
+  private gifList1: Gif[];
+  private gifList2: Gif[];
+  private gifList3: Gif[];
 
   constructor(
     private gifService: GifService,
@@ -22,14 +24,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    this.gifList = [];
+    this.cleanLists();
 
     this.route.params.subscribe(
       (params: any) => {
+        this.cleanLists();
         if (params['q'] != null) {
-          console.log(params['q']);
+          this.searchForGifs(params['q'], 12, 0);
         } else {
-          console.log(`padrao`);
+          this.searchForGifs('caramelo', 12, 0);
         }
       }
     );
@@ -38,17 +41,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-  searchForGifs(query: string, limit: number, offset: number): void {
+  private searchForGifs(query: string, limit: number, offset: number): void {
     const options: RequestSearchObject = new RequestSearchObject();
     options.q = query;
+    options.q = query;
+    options.offset = offset;
     this.gifService.getGifs(options).subscribe(
       success => {
-        this.gifList = success.data;
-        console.log(this.gifList);
+        this.addToLists(success.data);
       },
       error => {
         console.log(error);
       }
     );
+  }
+
+  private addToLists(gifList: Gif[]): void {
+    for (let i = 0; i < gifList.length; i += 4) {
+      this.gifList1.push(gifList[i]);
+      if (i + 1 < gifList.length) {
+        this.gifList2.push(gifList[i + 1]);
+      }
+      if (i + 2 < gifList.length) {
+        this.gifList3.push(gifList[i + 2]);
+      }
+    }
+  }
+
+  private cleanLists(): void {
+    this.gifList1 = [];
+    this.gifList2 = [];
+    this.gifList3 = [];
   }
 }
