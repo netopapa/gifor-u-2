@@ -14,10 +14,10 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  private gifList1: Gif[];
-  private gifList2: Gif[];
-  private gifList3: Gif[];
-  private queryList: string[];
+  gifList1: Gif[];
+  gifList2: Gif[];
+  gifList3: Gif[];
+  queryList: string[];
 
   constructor(
     private gifService: GifService,

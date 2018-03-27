@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
 
-  private search = '';
+  search = '';
 
   constructor(
     private router: Router,
@@ -95,11 +95,11 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     });
   }
 
-  private cleanSearch(): void {
+  cleanSearch(): void {
     this.search = '';
   }
 
-  private searchTheseGifs(q: string): void {
+  searchTheseGifs(q: string): void {
     this.router.navigate([`${q}`]);
   }
 }

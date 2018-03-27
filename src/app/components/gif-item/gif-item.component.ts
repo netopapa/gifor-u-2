@@ -17,11 +17,11 @@ export class GifItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  private showGifInfo(e: any): void {
+  showGifInfo(e: any): void {
     e.target.childNodes[3].classList.add('hovered');
   }
 
-  private hideGifInfo(e: any): void {
+  hideGifInfo(e: any): void {
     e.target.childNodes[3].classList.remove('hovered');
   }
 
